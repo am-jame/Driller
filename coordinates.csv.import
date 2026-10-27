@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://pdgfjo8vnvqa"
+
+[deps]
+
+files=["res://coordinates.Counts.translation", "res://coordinates.Marcher.translation", "res://coordinates.Section.translation", "res://coordinates.Side to side.translation", "res://coordinates.Front to back.translation", "res://coordinates.X (yd).translation", "res://coordinates.Y (yd).translation"]
+
+source_file="res://coordinates.csv"
+dest_files=["res://coordinates.Counts.translation", "res://coordinates.Marcher.translation", "res://coordinates.Section.translation", "res://coordinates.Side to side.translation", "res://coordinates.Front to back.translation", "res://coordinates.X (yd).translation", "res://coordinates.Y (yd).translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

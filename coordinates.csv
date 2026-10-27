@@ -1,0 +1,97 @@
+Set,Counts,Marcher,Section,Side to side,Front to back,X (yd),Y (yd)
+Set 1,,F1,Flute,S1: 2.0 steps inside 45 yd ln,4.0 steps behind front hash,-3.750,6.389
+Set 1,,F2,Flute,S1: 2.0 steps outside 50 yd ln,4.0 steps behind front hash,-1.250,6.389
+Set 1,,F3,Flute,S2: 2.0 steps outside 50 yd ln,4.0 steps behind front hash,1.250,6.389
+Set 1,,F4,Flute,S2: 2.0 steps inside 45 yd ln,4.0 steps behind front hash,3.750,6.389
+Set 1,,C1,Clarinet,S1: 2.0 steps inside 45 yd ln,8.0 steps behind front hash,-3.750,3.889
+Set 1,,C2,Clarinet,S1: 2.0 steps outside 50 yd ln,8.0 steps behind front hash,-1.250,3.889
+Set 1,,C3,Clarinet,S2: 2.0 steps outside 50 yd ln,8.0 steps behind front hash,1.250,3.889
+Set 1,,C4,Clarinet,S2: 2.0 steps inside 45 yd ln,8.0 steps behind front hash,3.750,3.889
+Set 1,,T1,Trumpet,S1: 2.0 steps inside 45 yd ln,12.0 steps behind front hash,-3.750,1.389
+Set 1,,T2,Trumpet,S1: 2.0 steps outside 50 yd ln,12.0 steps behind front hash,-1.250,1.389
+Set 1,,T3,Trumpet,S2: 2.0 steps outside 50 yd ln,12.0 steps behind front hash,1.250,1.389
+Set 1,,T4,Trumpet,S2: 2.0 steps inside 45 yd ln,12.0 steps behind front hash,3.750,1.389
+Set 1,,M1,Mellophone,S1: 2.0 steps inside 45 yd ln,12.44 steps in front of back hash,-3.750,-1.111
+Set 1,,M2,Mellophone,S1: 2.0 steps outside 50 yd ln,12.44 steps in front of back hash,-1.250,-1.111
+Set 1,,M3,Mellophone,S2: 2.0 steps outside 50 yd ln,12.44 steps in front of back hash,1.250,-1.111
+Set 1,,M4,Mellophone,S2: 2.0 steps inside 45 yd ln,12.44 steps in front of back hash,3.750,-1.111
+Set 1,,E1,Baritone,S1: 2.0 steps inside 45 yd ln,8.44 steps in front of back hash,-3.750,-3.611
+Set 1,,E2,Baritone,S1: 2.0 steps outside 50 yd ln,8.44 steps in front of back hash,-1.250,-3.611
+Set 1,,E3,Baritone,S2: 2.0 steps outside 50 yd ln,8.44 steps in front of back hash,1.250,-3.611
+Set 1,,E4,Baritone,S2: 2.0 steps inside 45 yd ln,8.44 steps in front of back hash,3.750,-3.611
+Set 1,,U1,Tuba,S1: 2.0 steps inside 45 yd ln,4.44 steps in front of back hash,-3.750,-6.111
+Set 1,,U2,Tuba,S1: 2.0 steps outside 50 yd ln,4.44 steps in front of back hash,-1.250,-6.111
+Set 1,,U3,Tuba,S2: 2.0 steps outside 50 yd ln,4.44 steps in front of back hash,1.250,-6.111
+Set 1,,U4,Tuba,S2: 2.0 steps inside 45 yd ln,4.44 steps in front of back hash,3.750,-6.111
+Set 2,16,F1,Flute,S1: 2.52 steps outside 50 yd ln,7.79 steps behind front hash,-1.573,4.020
+Set 2,16,F2,Flute,S2: 0.7 steps inside 45 yd ln,3.13 steps behind front hash,4.563,6.933
+Set 2,16,F3,Flute,S2: 2.98 steps outside 45 yd ln,3.7 steps behind front hash,6.863,6.578
+Set 2,16,F4,Flute,S2: 3.18 steps outside 40 yd ln,10.9 steps behind front hash,11.985,2.079
+Set 2,16,C1,Clarinet,S1: 3.43 steps inside 45 yd ln,10.9 steps behind front hash,-2.859,2.079
+Set 2,16,C2,Clarinet,S2: 3.62 steps outside 50 yd ln,3.7 steps behind front hash,2.263,6.578
+Set 2,16,C3,Clarinet,S2: 1.66 steps inside 40 yd ln,5.31 steps behind front hash,8.960,5.568
+Set 2,16,C4,Clarinet,S2: 3.57 steps inside 35 yd ln,14.04 steps in front of back hash,12.771,-0.115
+Set 2,16,T1,Trumpet,S1: 2.17 steps inside 45 yd ln,14.04 steps in front of back hash,-3.645,-0.115
+Set 2,16,T2,Trumpet,S2: 0.27 steps outside 50 yd ln,5.31 steps behind front hash,0.166,5.568
+Set 2,16,T3,Trumpet,S2: 1.12 steps outside 40 yd ln,7.79 steps behind front hash,10.699,4.020
+Set 2,16,T4,Trumpet,S2: 3.14 steps inside 35 yd ln,10.33 steps in front of back hash,13.037,-2.431
+Set 2,16,M1,Mellophone,S1: 1.74 steps inside 45 yd ln,10.33 steps in front of back hash,-3.911,-2.431
+Set 2,16,M2,Mellophone,S1: 2.52 steps outside 50 yd ln,0.01 steps in front of back hash,-1.573,-8.882
+Set 2,16,M3,Mellophone,S2: 1.66 steps inside 40 yd ln,2.47 steps behind back hash,8.960,-10.430
+Set 2,16,M4,Mellophone,S2: 3.57 steps inside 35 yd ln,6.63 steps in front of back hash,12.771,-4.747
+Set 2,16,E1,Baritone,S1: 2.17 steps inside 45 yd ln,6.63 steps in front of back hash,-3.645,-4.747
+Set 2,16,E2,Baritone,S2: 0.27 steps outside 50 yd ln,2.47 steps behind back hash,0.166,-10.430
+Set 2,16,E3,Baritone,S2: 2.98 steps outside 45 yd ln,4.08 steps behind back hash,6.863,-11.440
+Set 2,16,E4,Baritone,S2: 3.18 steps outside 40 yd ln,3.12 steps in front of back hash,11.985,-6.940
+Set 2,16,U1,Tuba,S1: 3.43 steps inside 45 yd ln,3.12 steps in front of back hash,-2.859,-6.940
+Set 2,16,U2,Tuba,S2: 3.62 steps outside 50 yd ln,4.08 steps behind back hash,2.263,-11.440
+Set 2,16,U3,Tuba,S2: 0.7 steps inside 45 yd ln,4.65 steps behind back hash,4.563,-11.795
+Set 2,16,U4,Tuba,S2: 1.12 steps outside 40 yd ln,0.01 steps in front of back hash,10.699,-8.882
+Set 3,16,F1,Flute,S2: 3.08 steps outside 50 yd ln,12.68 steps in front of back hash,1.925,-0.963
+Set 3,16,F2,Flute,S2: 0.13 steps inside 45 yd ln,13.85 steps behind front hash,4.920,0.231
+Set 3,16,F3,Flute,S2: 1.61 steps outside 45 yd ln,14.07 steps behind front hash,6.009,0.093
+Set 3,16,F4,Flute,S2: 2.24 steps inside 40 yd ln,11.31 steps in front of back hash,8.601,-1.820
+Set 3,16,C1,Clarinet,S2: 1.98 steps outside 50 yd ln,11.31 steps in front of back hash,1.239,-1.820
+Set 3,16,C2,Clarinet,S2: 1.87 steps inside 45 yd ln,14.07 steps behind front hash,3.830,0.093
+Set 3,16,C3,Clarinet,S2: 3.25 steps outside 45 yd ln,13.72 steps in front of back hash,7.030,-0.313
+Set 3,16,C4,Clarinet,S2: 1.54 steps inside 40 yd ln,9.7 steps in front of back hash,9.036,-2.828
+Set 3,16,T1,Trumpet,S2: 1.28 steps outside 50 yd ln,9.7 steps in front of back hash,0.803,-2.828
+Set 3,16,T2,Trumpet,S2: 3.5 steps inside 45 yd ln,13.72 steps in front of back hash,2.809,-0.313
+Set 3,16,T3,Trumpet,S2: 3.34 steps inside 40 yd ln,12.68 steps in front of back hash,7.914,-0.963
+Set 3,16,T4,Trumpet,S2: 1.3 steps inside 40 yd ln,7.96 steps in front of back hash,9.186,-3.915
+Set 3,16,M1,Mellophone,S2: 1.04 steps outside 50 yd ln,7.96 steps in front of back hash,0.653,-3.915
+Set 3,16,M2,Mellophone,S2: 3.08 steps outside 50 yd ln,3.23 steps in front of back hash,1.925,-6.867
+Set 3,16,M3,Mellophone,S2: 3.25 steps outside 45 yd ln,2.19 steps in front of back hash,7.030,-7.518
+Set 3,16,M4,Mellophone,S2: 1.54 steps inside 40 yd ln,6.22 steps in front of back hash,9.036,-5.003
+Set 3,16,E1,Baritone,S2: 1.28 steps outside 50 yd ln,6.22 steps in front of back hash,0.803,-5.003
+Set 3,16,E2,Baritone,S2: 3.5 steps inside 45 yd ln,2.19 steps in front of back hash,2.809,-7.518
+Set 3,16,E3,Baritone,S2: 1.61 steps outside 45 yd ln,1.55 steps in front of back hash,6.009,-7.923
+Set 3,16,E4,Baritone,S2: 2.24 steps inside 40 yd ln,4.61 steps in front of back hash,8.601,-6.010
+Set 3,16,U1,Tuba,S2: 1.98 steps outside 50 yd ln,4.61 steps in front of back hash,1.239,-6.010
+Set 3,16,U2,Tuba,S2: 1.87 steps inside 45 yd ln,1.55 steps in front of back hash,3.830,-7.923
+Set 3,16,U3,Tuba,S2: 0.13 steps inside 45 yd ln,1.32 steps in front of back hash,4.920,-8.061
+Set 3,16,U4,Tuba,S2: 3.34 steps inside 40 yd ln,3.23 steps in front of back hash,7.914,-6.867
+Set 4,16,F1,Flute,S1: 2.85 steps inside 40 yd ln,2.98 steps behind front hash,-8.219,7.027
+Set 4,16,F2,Flute,S1: 0.44 steps inside 45 yd ln,0.73 steps behind front hash,-4.723,8.434
+Set 4,16,F3,Flute,S1: 2.48 steps inside 45 yd ln,0.99 steps behind front hash,-3.449,8.272
+Set 4,16,F4,Flute,S1: 0.69 steps outside 50 yd ln,4.59 steps behind front hash,-0.429,6.021
+Set 4,16,C1,Clarinet,S1: 1.57 steps inside 40 yd ln,4.59 steps behind front hash,-9.016,6.021
+Set 4,16,C2,Clarinet,S1: 1.59 steps outside 45 yd ln,0.99 steps behind front hash,-5.997,8.272
+Set 4,16,C3,Clarinet,S1: 3.61 steps outside 50 yd ln,1.75 steps behind front hash,-2.257,7.793
+Set 4,16,C4,Clarinet,S2: 0.12 steps outside 50 yd ln,6.48 steps behind front hash,0.076,4.841
+Set 4,16,T1,Trumpet,S1: 0.77 steps inside 40 yd ln,6.48 steps behind front hash,-9.522,4.841
+Set 4,16,T2,Trumpet,S1: 3.5 steps outside 45 yd ln,1.75 steps behind front hash,-7.188,7.793
+Set 4,16,T3,Trumpet,S1: 1.96 steps outside 50 yd ln,2.98 steps behind front hash,-1.226,7.027
+Set 4,16,T4,Trumpet,S2: 0.4 steps outside 50 yd ln,8.51 steps behind front hash,0.250,3.569
+Set 4,16,M1,Mellophone,S1: 0.49 steps inside 40 yd ln,8.51 steps behind front hash,-9.695,3.569
+Set 4,16,M2,Mellophone,S1: 2.85 steps inside 40 yd ln,14.05 steps behind front hash,-8.219,0.111
+Set 4,16,M3,Mellophone,S1: 3.61 steps outside 50 yd ln,13.17 steps in front of back hash,-2.257,-0.655
+Set 4,16,M4,Mellophone,S2: 0.12 steps outside 50 yd ln,10.55 steps behind front hash,0.076,2.297
+Set 4,16,E1,Baritone,S1: 0.77 steps inside 40 yd ln,10.55 steps behind front hash,-9.522,2.297
+Set 4,16,E2,Baritone,S1: 3.5 steps outside 45 yd ln,13.17 steps in front of back hash,-7.188,-0.655
+Set 4,16,E3,Baritone,S1: 2.48 steps inside 45 yd ln,12.41 steps in front of back hash,-3.449,-1.134
+Set 4,16,E4,Baritone,S1: 0.69 steps outside 50 yd ln,12.44 steps behind front hash,-0.429,1.117
+Set 4,16,U1,Tuba,S1: 1.57 steps inside 40 yd ln,12.44 steps behind front hash,-9.016,1.117
+Set 4,16,U2,Tuba,S1: 1.59 steps outside 45 yd ln,12.41 steps in front of back hash,-5.997,-1.134
+Set 4,16,U3,Tuba,S1: 0.44 steps inside 45 yd ln,12.15 steps in front of back hash,-4.723,-1.296
+Set 4,16,U4,Tuba,S1: 1.96 steps outside 50 yd ln,14.05 steps behind front hash,-1.226,0.111
