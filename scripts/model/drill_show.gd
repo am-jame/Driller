@@ -376,7 +376,6 @@ func order_by_moves(i: int, sh: DrillShape) -> bool:
 	var cum := ShapeGeom.cumulative(poly)
 	if cum.is_empty():
 		return false
-	var total := cum[cum.size() - 1]
 	var closed := ShapeGeom.is_closed(f)
 	var from := PackedVector2Array()
 	for id in ids:
@@ -384,7 +383,8 @@ func order_by_moves(i: int, sh: DrillShape) -> bool:
 
 	# Spots repeat every 1/n of the way round, so only offsets in [0, 1/n) matter.
 	var offsets := PackedFloat64Array([s.offset_of(sh.id)])
-	if closed:
+	# Pinned-corner spots don't move with small rotations, so one try is enough.
+	if closed and not ShapeGeom.pins_corners(f, n):
 		var tries := clampi(4000 / (n * n) + 8, 8, 48)
 		for k in tries:
 			offsets.append((float(k) / tries) / n)
@@ -396,7 +396,7 @@ func order_by_moves(i: int, sh: DrillShape) -> bool:
 	cost.resize(n * n)
 	for off in offsets:
 		var spots := PackedVector2Array()
-		for d in ShapeGeom.params(n, total, closed, off):
+		for d in ShapeGeom.slot_params(f, cum, n, off):
 			spots.append(ShapeGeom.point_at(poly, cum, d))
 		for r in n:
 			for c in n:

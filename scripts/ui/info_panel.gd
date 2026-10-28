@@ -464,6 +464,18 @@ func _build_shape() -> void:
 				ed.drill.relayout_everywhere(sh)))
 		_row(g, "Shape", closed)
 
+	if sh.type in ["rect", "polygon"]:
+		var pin := CheckBox.new()
+		pin.text = "Marchers on corners"
+		pin.button_pressed = sh.corners
+		pin.focus_mode = FOCUS_NONE
+		pin.tooltip_text = "Always put a marcher on every corner, spreading the rest evenly along each side (all sets)."
+		pin.toggled.connect(func(on: bool) -> void:
+			_edit("shape_corners:%d" % sh.id, func() -> void:
+				sh.corners = on
+				ed.drill.relayout_everywhere(sh)))
+		_row(g, "Corners", pin)
+
 	var rot := HSlider.new()
 	rot.min_value = 0.0
 	rot.max_value = 1.0
@@ -537,8 +549,15 @@ func _build_shape() -> void:
 		rot.visible = closed_now
 		var total := ShapeGeom.length(shf)
 		length.text = "%.2f yd  (%s steps)" % [total, FieldCoords.fmt_steps(total / FieldCoords.STEP)]
-		var sp := ShapeGeom.spacing(shf, n)
-		spacing.text = "—" if n < 2 else "%.2f yd  (%s-step interval)" % [sp, FieldCoords.fmt_steps(sp / FieldCoords.STEP)]
+		var gr := ShapeGeom.gap_range(shf, n)
+		if n < 2:
+			spacing.text = "—"
+		elif gr.y - gr.x < 0.01:
+			spacing.text = "%.2f yd  (%s-step interval)" % [gr.y, FieldCoords.fmt_steps(gr.y / FieldCoords.STEP)]
+		else:
+			spacing.text = "%.2f–%.2f yd  (%s–%s steps)" % [gr.x, gr.y, FieldCoords.fmt_steps(gr.x / FieldCoords.STEP), FieldCoords.fmt_steps(gr.y / FieldCoords.STEP)]
+		if sh.corners and ShapeGeom.has_corners(shf) and n < ShapeGeom.corner_count(shf):
+			spacing.text += "\nNeeds %d marchers to fill every corner" % ShapeGeom.corner_count(shf)
 		var si := ed.current_set_index()
 		if si == 0:
 			moves.text = "Opening set"

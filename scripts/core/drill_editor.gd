@@ -293,9 +293,15 @@ func delete_set(i: int) -> void:
 	checkpoint()
 	drill.sets.remove_at(i)
 	_renumber()
+	# Move to a set that still exists before anything redraws, or panels
+	# would look up the deleted (possibly now out-of-range) set.
+	var j := mini(i, drill.sets.size() - 1)
+	time = drill.set_times()[j]
+	loc = {"at_set": true, "set": j, "from": j, "frac": 0.0, "count": 0.0}
+	_validate_selection(false)
 	structure_changed.emit()
-	go_to_set(mini(i, drill.sets.size() - 1))
-	_validate_selection()
+	selection_changed.emit()
+	time_changed.emit()
 	positions_changed.emit()
 
 

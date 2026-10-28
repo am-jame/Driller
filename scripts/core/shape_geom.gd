@@ -149,7 +149,72 @@ static func params(n: int, total: float, closed: bool, offset: float) -> PackedF
 	return out
 
 
-## Spots for n marchers spaced evenly along the shape.
+## True if the shape has sharp corners that marchers can be pinned to.
+static func has_corners(sh: DrillShape) -> bool:
+	return sh.type in ["rect", "polygon"] and sh.points.size() >= 3
+
+
+## Number of corners a "marchers on corners" shape needs filled.
+static func corner_count(sh: DrillShape) -> int:
+	return sh.points.size() if has_corners(sh) else 0
+
+
+## True if marchers are really being pinned to corners (the option is on and
+## there are enough marchers to cover every corner).
+static func pins_corners(sh: DrillShape, n: int) -> bool:
+	return sh.corners and has_corners(sh) and n >= corner_count(sh)
+
+
+## Distances along the shape for n marchers with one on every corner and the
+## rest spread over the sides, each side's gaps as even as possible.
+## `cum` is the cumulative length of sample(sh) (whose points are the corners).
+static func corner_params(sh: DrillShape, cum: PackedFloat64Array, n: int, offset: float) -> PackedFloat64Array:
+	var closed := is_closed(sh)
+	var m := sh.points.size()
+	var total := cum[cum.size() - 1]
+	var sides := m if closed else m - 1
+	var starts := PackedFloat64Array()
+	var lens := PackedFloat64Array()
+	var extra := PackedInt32Array()
+	for j in sides:
+		starts.append(cum[j])
+		lens.append((total if closed and j == m - 1 else cum[j + 1]) - cum[j])
+		extra.append(0)
+	# Hand the spare marchers out one at a time to whichever side has the
+	# widest gaps, which keeps the largest interval as small as possible.
+	for _r in n - m:
+		var best := 0
+		var best_gap := -1.0
+		for j in sides:
+			var g := lens[j] / (extra[j] + 1)
+			if g > best_gap + 1e-9:
+				best_gap = g
+				best = j
+		extra[best] += 1
+	var slots := PackedFloat64Array()
+	for j in sides:
+		slots.append(starts[j])
+		for t in extra[j]:
+			slots.append(starts[j] + lens[j] * float(t + 1) / (extra[j] + 1))
+	if not closed:
+		slots.append(total)
+		return slots
+	# Rotating a pinned shape moves marchers a whole spot at a time.
+	var shift := posmod(roundi(offset * n), n)
+	var out := PackedFloat64Array()
+	for k in n:
+		out.append(slots[(k + shift) % n])
+	return out
+
+
+## Distances along the shape for its n marchers, in order.
+static func slot_params(sh: DrillShape, cum: PackedFloat64Array, n: int, offset: float) -> PackedFloat64Array:
+	if pins_corners(sh, n):
+		return corner_params(sh, cum, n, offset)
+	return params(n, cum[cum.size() - 1], is_closed(sh), offset)
+
+
+## Spots for the shape's n marchers: evenly spaced, or pinned to corners.
 static func distribute(sh: DrillShape, n: int, offset := 0.0) -> PackedVector2Array:
 	var poly := sample(sh)
 	var cum := cumulative(poly)
@@ -158,8 +223,7 @@ static func distribute(sh: DrillShape, n: int, offset := 0.0) -> PackedVector2Ar
 		for k in n:
 			out.append(Vector2.ZERO)
 		return out
-	var total := cum[cum.size() - 1]
-	for s in params(n, total, is_closed(sh), offset):
+	for s in slot_params(sh, cum, n, offset):
 		out.append(point_at(poly, cum, s))
 	return out
 
@@ -170,6 +234,26 @@ static func spacing(sh: DrillShape, n: int) -> float:
 	if is_closed(sh):
 		return total / n if n > 0 else 0.0
 	return total / (n - 1) if n > 1 else 0.0
+
+
+## Smallest and largest gap (along the shape) between neighbouring marchers.
+static func gap_range(sh: DrillShape, n: int) -> Vector2:
+	if n < 2:
+		return Vector2.ZERO
+	var cum := cumulative(sample(sh))
+	if cum.is_empty():
+		return Vector2.ZERO
+	var total := cum[cum.size() - 1]
+	var ps := slot_params(sh, cum, n, 0.0)
+	ps.sort()
+	var lo := INF
+	var hi := 0.0
+	var count := ps.size() if is_closed(sh) else ps.size() - 1
+	for k in count:
+		var g := (ps[k + 1] if k + 1 < ps.size() else ps[0] + total) - ps[k]
+		lo = minf(lo, g)
+		hi = maxf(hi, g)
+	return Vector2(lo, hi)
 
 
 static func rect_corners(a: Vector2, b: Vector2) -> PackedVector2Array:

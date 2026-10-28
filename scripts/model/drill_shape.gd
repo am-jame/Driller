@@ -22,6 +22,8 @@ var type := "line"
 var points := PackedVector2Array()
 ## Only used by polygon / curve / freeform (rect and ellipse are always closed).
 var closed := false
+## Rect / polygon only: always put a marcher on every corner.
+var corners := false
 
 
 func type_name() -> String:
@@ -40,6 +42,7 @@ func copy() -> DrillShape:
 	s.type = type
 	s.points = points.duplicate()
 	s.closed = closed
+	s.corners = corners
 	return s
 
 
@@ -53,6 +56,7 @@ func to_dict() -> Dictionary:
 		"type": type,
 		"points": pts,
 		"closed": closed,
+		"corners": corners,
 	}
 
 
@@ -62,6 +66,7 @@ static func from_dict(d: Dictionary) -> DrillShape:
 	s.name = str(d.get("name", ""))
 	s.type = str(d.get("type", "line"))
 	s.closed = bool(d.get("closed", false))
+	s.corners = bool(d.get("corners", false))
 	for p in d.get("points", []):
 		s.points.append(Vector2(float(p[0]), float(p[1])))
 	return s
